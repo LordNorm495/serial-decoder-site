@@ -230,6 +230,42 @@ export default function BrandPage({
                   Universal Decoder
                 </Link>
               </div>
+
+              {/* Affiliate CTA - HVAC Contractor (Angi) */}
+              {brand.category === 'hvac' && (
+                <div className="bg-green-900 text-white rounded-2xl p-5">
+                  <p className="text-lg mb-1">🔧</p>
+                  <p className="font-bold mb-1 text-sm">Need an HVAC Technician?</p>
+                  <p className="text-green-200 text-xs mb-3">Get free quotes from local certified HVAC pros near you.</p>
+                  <a
+                    href="https://www.angi.com/companylist/hvac.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-white text-green-900 font-bold text-sm py-2 px-4 rounded-xl text-center hover:bg-green-50 transition-colors"
+                  >
+                    Get Free Quotes →
+                  </a>
+                </div>
+              )}
+
+              {/* Affiliate CTA - Home Depot Parts */}
+              <div className="bg-orange-700 text-white rounded-2xl p-5">
+                <p className="text-lg mb-1">🛒</p>
+                <p className="font-bold mb-1 text-sm">Shop Replacement Parts</p>
+                <p className="text-orange-100 text-xs mb-3">
+                  {brand.category === 'hvac'
+                    ? 'Find filters, capacitors, motors & more for your unit.'
+                    : 'Find replacement parts and accessories for your appliance.'}
+                </p>
+                <a
+                  href={`https://www.homedepot.com/s/${encodeURIComponent(brand.name + ' parts')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-white text-orange-700 font-bold text-sm py-2 px-4 rounded-xl text-center hover:bg-orange-50 transition-colors"
+                >
+                  Shop at Home Depot →
+                </a>
+              </div>
             </div>
           </aside>
         </div>

@@ -483,6 +483,122 @@ function lgDecode(serial: string): DecodeResult {
   }
 }
 
+// ─── FRIGIDAIRE / ELECTROLUX ────────────────────────────────────────────────
+// Format: 2-letter plant code + 2-digit year + 2-digit week + sequence
+// Example: XC2005XXXXX → plant=XC, year=2020, week=05
+function frigidaireDecode(serial: string, brand = 'Frigidaire'): DecodeResult {
+  const s = serial.toUpperCase().replace(/\s/g, '')
+  const notes: string[] = []
+  let year: number | null = null
+  let week: number | null = null
+
+  if (s.length >= 6) {
+    const plant = s.substring(0, 2)
+    const yy = parseInt(s.substring(2, 4), 10)
+    const ww = parseInt(s.substring(4, 6), 10)
+    if (!isNaN(yy) && !isNaN(ww)) {
+      year = yy < 80 ? 2000 + yy : 1900 + yy
+      week = ww >= 1 && ww <= 52 ? ww : null
+      notes.push(`Plant code: "${plant}"`)
+      notes.push(`Characters 3-4: "${s.substring(2, 4)}" → Year: ${year}`)
+      if (week) notes.push(`Characters 5-6: Week ${week}`)
+    }
+  }
+
+  return {
+    brand,
+    year,
+    month: null,
+    week,
+    age: calcAge(year),
+    monthName: null,
+    confidence: year ? 'high' : 'low',
+    notes,
+    rawSerial: serial,
+    error: year ? undefined : 'Could not decode year from serial number',
+  }
+}
+
+// ─── SPEED QUEEN ─────────────────────────────────────────────────────────────
+// Format: First 2 digits = year, next 2 digits = week
+// Example: 1807XXXXX → year=2018, week=07
+function speedQueenDecode(serial: string): DecodeResult {
+  const s = serial.replace(/\s/g, '')
+  const notes: string[] = []
+  let year: number | null = null
+  let week: number | null = null
+
+  if (s.length >= 4) {
+    const yy = parseInt(s.substring(0, 2), 10)
+    const ww = parseInt(s.substring(2, 4), 10)
+    if (!isNaN(yy) && !isNaN(ww)) {
+      year = yy < 80 ? 2000 + yy : 1900 + yy
+      week = ww >= 1 && ww <= 52 ? ww : null
+      notes.push(`First 2 digits "${s.substring(0, 2)}" → Year: ${year}`)
+      if (week) notes.push(`Digits 3-4: Week ${week}`)
+    }
+  }
+
+  return {
+    brand: 'Speed Queen',
+    year,
+    month: null,
+    week,
+    age: calcAge(year),
+    monthName: null,
+    confidence: year ? 'high' : 'low',
+    notes,
+    rawSerial: serial,
+    error: year ? undefined : 'Could not decode year from serial number',
+  }
+}
+
+// ─── BOSCH ───────────────────────────────────────────────────────────────────
+// FD (Fertigungsdatum) format: FD YYMM or just YYMM
+// Modern: first 2 chars = plant code (letters), next 2 = year, next 2 = month
+// Example: FD8901XXXXX → year=1989, month=01; 9501XXXXX → year=1995, month=01
+function boschDecode(serial: string): DecodeResult {
+  const s = serial.toUpperCase().replace(/\s/g, '')
+  const notes: string[] = []
+  let year: number | null = null
+  let month: number | null = null
+
+  // Check for FD prefix
+  let digits = s
+  if (s.startsWith('FD') && s.length >= 6) {
+    digits = s.substring(2)
+    notes.push('FD (Fertigungsdatum) prefix detected')
+  } else if (/^[A-Z]{2}\d/.test(s) && s.length >= 6) {
+    // Plant code prefix (2 letters)
+    notes.push(`Plant code: "${s.substring(0, 2)}"`)
+    digits = s.substring(2)
+  }
+
+  if (digits.length >= 4) {
+    const yy = parseInt(digits.substring(0, 2), 10)
+    const mm = parseInt(digits.substring(2, 4), 10)
+    if (!isNaN(yy) && !isNaN(mm)) {
+      year = yy < 80 ? 2000 + yy : 1900 + yy
+      month = mm >= 1 && mm <= 12 ? mm : null
+      notes.push(`YY: "${digits.substring(0, 2)}" → Year: ${year}`)
+      if (month) notes.push(`MM: "${digits.substring(2, 4)}" → Month: ${monthName(month)}`)
+    }
+  }
+
+  return {
+    brand: 'Bosch',
+    year,
+    month,
+    week: null,
+    age: calcAge(year),
+    monthName: monthName(month),
+    confidence: year ? 'medium' : 'low',
+    notes,
+    rawSerial: serial,
+    error: year ? undefined : 'Could not decode year from serial number',
+  }
+}
+
 // ─── AUTO-DETECT ─────────────────────────────────────────────────────────────
 export type BrandKey =
   | 'carrier' | 'bryant' | 'payne'
@@ -493,6 +609,9 @@ export type BrandKey =
   | 'whirlpool' | 'kitchenaid' | 'maytag' | 'amana'
   | 'ge' | 'hotpoint'
   | 'samsung' | 'lg'
+  | 'comfortmaker' | 'tempstar' | 'luxaire' | 'champion-hvac' | 'keeprite'
+  | 'jennair' | 'kenmore' | 'roper'
+  | 'frigidaire' | 'electrolux' | 'speed-queen' | 'bosch'
 
 export function decodeByBrand(serial: string, brand: BrandKey): DecodeResult {
   const s = serial.trim()
@@ -519,6 +638,21 @@ export function decodeByBrand(serial: string, brand: BrandKey): DecodeResult {
     case 'hotpoint':   return geDecode(s, 'Hotpoint')
     case 'samsung':    return samsungDecode(s)
     case 'lg':         return lgDecode(s)
+    // York/ICP family
+    case 'comfortmaker': return yorkDecode(s, 'Comfortmaker')
+    case 'tempstar':     return yorkDecode(s, 'Tempstar')
+    case 'luxaire':      return yorkDecode(s, 'Luxaire')
+    case 'champion-hvac': return yorkDecode(s, 'Champion HVAC')
+    case 'keeprite':     return yorkDecode(s, 'Keeprite')
+    // Whirlpool family
+    case 'jennair':      return whirlpoolDecode(s, 'JennAir')
+    case 'kenmore':      return whirlpoolDecode(s, 'Kenmore')
+    case 'roper':        return whirlpoolDecode(s, 'Roper')
+    // New decoders
+    case 'frigidaire':   return frigidaireDecode(s, 'Frigidaire')
+    case 'electrolux':   return frigidaireDecode(s, 'Electrolux')
+    case 'speed-queen':  return speedQueenDecode(s)
+    case 'bosch':        return boschDecode(s)
     default:           return { brand: 'Unknown', year: null, month: null, week: null, age: null, monthName: null, confidence: 'low', notes: [], rawSerial: serial, error: 'Unknown brand' }
   }
 }
