@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://serial-decoder.com/sitemap.xml

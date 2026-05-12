@@ -1,0 +1,250 @@
+import { BrandKey } from './decoders'
+
+export interface BrandInfo {
+  key: BrandKey
+  name: string
+  slug: string
+  category: 'hvac' | 'appliance'
+  description: string
+  serialLocation: string
+  exampleSerial: string
+  parent?: string
+  relatedBrands?: string[]
+}
+
+export const brands: BrandInfo[] = [
+  {
+    key: 'carrier',
+    name: 'Carrier',
+    slug: 'carrier',
+    category: 'hvac',
+    description: 'Carrier is one of the world\'s largest HVAC manufacturers. Serial numbers encode the manufacture week and year.',
+    serialLocation: 'Found on the data plate/label on the side or back of the unit, or inside the service panel.',
+    exampleSerial: '0105E12345',
+  },
+  {
+    key: 'bryant',
+    name: 'Bryant',
+    slug: 'bryant',
+    category: 'hvac',
+    description: 'Bryant is a subsidiary of Carrier and uses the same serial number format.',
+    serialLocation: 'Located on the rating plate attached to the outdoor unit or furnace cabinet.',
+    exampleSerial: '0207F98765',
+    parent: 'Carrier',
+    relatedBrands: ['Carrier', 'Payne'],
+  },
+  {
+    key: 'payne',
+    name: 'Payne',
+    slug: 'payne',
+    category: 'hvac',
+    description: 'Payne is a value brand under the Carrier umbrella, sharing the same serial number encoding.',
+    serialLocation: 'On the metal data plate on the exterior of the unit.',
+    exampleSerial: '1510G44321',
+    parent: 'Carrier',
+    relatedBrands: ['Carrier', 'Bryant'],
+  },
+  {
+    key: 'trane',
+    name: 'Trane',
+    slug: 'trane',
+    category: 'hvac',
+    description: 'Trane is a premium HVAC brand. Their serial numbers use a letter+digit system to encode manufacture date.',
+    serialLocation: 'On the rating plate on the outdoor unit, air handler, or furnace.',
+    exampleSerial: 'X4M123456',
+  },
+  {
+    key: 'american-standard',
+    name: 'American Standard',
+    slug: 'american-standard',
+    category: 'hvac',
+    description: 'American Standard shares ownership and serial number formats with Trane.',
+    serialLocation: 'Data plate on the unit exterior or inside the cabinet door.',
+    exampleSerial: 'X3W987654',
+    parent: 'Trane',
+    relatedBrands: ['Trane'],
+  },
+  {
+    key: 'lennox',
+    name: 'Lennox',
+    slug: 'lennox',
+    category: 'hvac',
+    description: 'Lennox is a top-tier HVAC brand known for efficiency. Serial numbers encode year and week in positions 4-7.',
+    serialLocation: 'On the specification plate inside the furnace cabinet or on the outdoor unit.',
+    exampleSerial: 'AB0312XXXXX',
+  },
+  {
+    key: 'york',
+    name: 'York',
+    slug: 'york',
+    category: 'hvac',
+    description: 'York (Johnson Controls) encodes decade, year, and month in the first characters of the serial.',
+    serialLocation: 'On the data plate located on the side panel of the outdoor unit or air handler.',
+    exampleSerial: 'K1051234567',
+  },
+  {
+    key: 'goodman',
+    name: 'Goodman',
+    slug: 'goodman',
+    category: 'hvac',
+    description: 'Goodman is a value-oriented HVAC brand. The first 4 digits of the serial encode the year and week.',
+    serialLocation: 'On the specification label on the side of the outdoor unit or inside the air handler.',
+    exampleSerial: '0612XXXXXXX',
+  },
+  {
+    key: 'amana-hvac',
+    name: 'Amana HVAC',
+    slug: 'amana',
+    category: 'hvac',
+    description: 'Amana HVAC (owned by Goodman/Daikin) uses the same serial format as Goodman.',
+    serialLocation: 'On the rating plate on the unit exterior.',
+    exampleSerial: '0912YYYYYYY',
+    parent: 'Goodman',
+    relatedBrands: ['Goodman', 'Daikin'],
+  },
+  {
+    key: 'daikin',
+    name: 'Daikin',
+    slug: 'daikin',
+    category: 'hvac',
+    description: 'Daikin USA (which owns Goodman) uses a similar serial number format for date encoding.',
+    serialLocation: 'On the specification plate on the outdoor or indoor unit.',
+    exampleSerial: '1103ZZZZZZZ',
+    parent: 'Goodman',
+  },
+  {
+    key: 'rheem',
+    name: 'Rheem',
+    slug: 'rheem',
+    category: 'hvac',
+    description: 'Rheem is a major HVAC and water heater brand. The 2nd and 3rd digits encode year, 4th and 5th encode week.',
+    serialLocation: 'On the data label attached to the unit. May be inside the access panel.',
+    exampleSerial: 'A0912XXXXX',
+  },
+  {
+    key: 'ruud',
+    name: 'Ruud',
+    slug: 'ruud',
+    category: 'hvac',
+    description: 'Ruud is owned by Rheem and shares the same serial number format.',
+    serialLocation: 'On the rating plate on the unit cabinet.',
+    exampleSerial: 'B1104YYYYY',
+    parent: 'Rheem',
+    relatedBrands: ['Rheem'],
+  },
+  {
+    key: 'heil',
+    name: 'Heil',
+    slug: 'heil',
+    category: 'hvac',
+    description: 'Heil (ICP/Johnson Controls) uses the same serial format as York.',
+    serialLocation: 'On the data plate on the exterior of the furnace or air conditioner.',
+    exampleSerial: 'J5031234567',
+    parent: 'York',
+    relatedBrands: ['York', 'Coleman'],
+  },
+  {
+    key: 'coleman',
+    name: 'Coleman',
+    slug: 'coleman',
+    category: 'hvac',
+    description: 'Coleman HVAC (Johnson Controls) uses the same serial format as York and Heil.',
+    serialLocation: 'On the data plate on the side of the unit.',
+    exampleSerial: 'K2081234567',
+    parent: 'York',
+    relatedBrands: ['York', 'Heil'],
+  },
+  {
+    key: 'whirlpool',
+    name: 'Whirlpool',
+    slug: 'whirlpool',
+    category: 'appliance',
+    description: 'Whirlpool appliance serials encode year and month in characters 2 and 3 respectively.',
+    serialLocation: 'On the label inside the door frame, behind the kick plate, or on the back panel.',
+    exampleSerial: 'XY2345678',
+  },
+  {
+    key: 'kitchenaid',
+    name: 'KitchenAid',
+    slug: 'kitchenaid',
+    category: 'appliance',
+    description: 'KitchenAid (Whirlpool brand) uses the same serial number encoding system.',
+    serialLocation: 'Inside the door, on the interior wall, or behind a drawer.',
+    exampleSerial: 'CSR123456',
+    parent: 'Whirlpool',
+    relatedBrands: ['Whirlpool', 'Maytag'],
+  },
+  {
+    key: 'maytag',
+    name: 'Maytag',
+    slug: 'maytag',
+    category: 'appliance',
+    description: 'Maytag (Whirlpool brand) shares the same serial format with year and month encoded by letters.',
+    serialLocation: 'Inside the door opening or on the back of the appliance.',
+    exampleSerial: 'MXT123456',
+    parent: 'Whirlpool',
+    relatedBrands: ['Whirlpool', 'KitchenAid'],
+  },
+  {
+    key: 'amana',
+    name: 'Amana Appliances',
+    slug: 'amana-appliances',
+    category: 'appliance',
+    description: 'Amana appliances (Whirlpool brand) use the same serial decoding system.',
+    serialLocation: 'Inside the refrigerator, behind the crisper drawer, or inside the oven door.',
+    exampleSerial: 'AYK123456',
+    parent: 'Whirlpool',
+  },
+  {
+    key: 'ge',
+    name: 'GE Appliances',
+    slug: 'ge',
+    category: 'appliance',
+    description: 'GE Appliances uses a letter-based system where position 2 = month and position 3 = year.',
+    serialLocation: 'Inside the door frame, under the lid, or on the back panel.',
+    exampleSerial: 'ZF123456',
+  },
+  {
+    key: 'hotpoint',
+    name: 'Hotpoint',
+    slug: 'hotpoint',
+    category: 'appliance',
+    description: 'Hotpoint (GE brand) shares the same serial number encoding as GE Appliances.',
+    serialLocation: 'Inside the door, on the back, or behind the kick plate.',
+    exampleSerial: 'ZD987654',
+    parent: 'GE',
+    relatedBrands: ['GE'],
+  },
+  {
+    key: 'samsung',
+    name: 'Samsung',
+    slug: 'samsung',
+    category: 'appliance',
+    description: 'Samsung appliances encode year in position 4 and month in position 5 of the serial number.',
+    serialLocation: 'Inside the refrigerator door, behind the crisper drawer, or inside the washing machine door.',
+    exampleSerial: 'XYZ-H-A12345',
+  },
+  {
+    key: 'lg',
+    name: 'LG',
+    slug: 'lg',
+    category: 'appliance',
+    description: 'LG appliances use position 2 for the year digit and position 3 for the month in their serial numbers.',
+    serialLocation: 'Inside the door frame, on the back of the unit, or behind the crisper drawer.',
+    exampleSerial: 'R10H123456',
+  },
+]
+
+export function getBrandBySlug(slug: string): BrandInfo | undefined {
+  return brands.find(b => b.slug === slug || b.key === slug)
+}
+
+export function getBrandsByCategory(category: 'hvac' | 'appliance'): BrandInfo[] {
+  return brands.filter(b => b.category === category)
+}
+
+export const brandSelectOptions = brands.map(b => ({
+  value: b.key,
+  label: b.name,
+  category: b.category,
+}))
