@@ -9,6 +9,38 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'whirlpool-serial-number-lookup',
+    title: 'Whirlpool Serial Number Lookup: Find the Age, Model, and Warranty of Any Whirlpool Appliance',
+    excerpt: 'How to find and read a Whirlpool serial number on a fridge, washer, dishwasher, or microwave — where the label is, what the code means, model vs. serial, and how to check your warranty.',
+    category: 'Appliances',
+    date: '2026-06-23',
+    readTime: '8 min',
+  },
+  {
+    slug: 'how-old-is-my-air-conditioner',
+    title: 'How Old Is My Air Conditioner? 4 Reliable Ways to Find Out',
+    excerpt: 'Four proven ways to find the exact age of your air conditioner — from the serial number to the model number, the inspection record, and the manufacturer. Plus what the age means for your wallet.',
+    category: 'HVAC',
+    date: '2026-06-22',
+    readTime: '7 min',
+  },
+  {
+    slug: 'ac-refrigerant-r22-r410a-r454b',
+    title: 'R-22, R-410A, and R-454B: What Your AC\'s Refrigerant Means for Repair Costs',
+    excerpt: 'How to tell which refrigerant your air conditioner uses, why it matters for repair and replacement decisions, and how the unit\'s age gives you the answer in seconds.',
+    category: 'HVAC',
+    date: '2026-06-22',
+    readTime: '7 min',
+  },
+  {
+    slug: 'rheem-ruud-serial-number-age',
+    title: 'Rheem & Ruud Serial Number Decoder: How to Find the Age of Your Unit',
+    excerpt: 'Decode any Rheem or Ruud serial number to find the manufacture date of your AC, furnace, heat pump, or water heater. Includes the week-and-year date code format with real examples.',
+    category: 'HVAC',
+    date: '2026-06-16',
+    readTime: '6 min',
+  },
+  {
     slug: 'real-estate-hvac-age-inspection',
     title: 'How to Check HVAC Age When Buying a Home (Before You Close)',
     excerpt: 'A real estate buyer\'s guide to checking HVAC and appliance age during a home purchase. How to read serial numbers, what ages to watch for, and how to negotiate.',
