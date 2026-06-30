@@ -1,243 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://serial-decoder.com/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/brands/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/carrier-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/bryant-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/payne-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/trane-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/american-standard-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/lennox-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/york-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/goodman-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/amana-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/daikin-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/rheem-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/ruud-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/heil-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/coleman-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/whirlpool-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/kitchenaid-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/maytag-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/amana-appliances-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/ge-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/hotpoint-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/samsung-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/lg-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/real-estate-hvac-age-inspection/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/hvac-maintenance-checklist/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/hvac-repair-vs-replace/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/how-long-does-an-hvac-system-last/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/water-heater-age-serial-number/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/refrigerator-age-serial-number/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/goodman-serial-number-age/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/lennox-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/trane-serial-number-age/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/carrier-serial-number-decoder/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/blog/what-does-hvac-serial-number-tell-you/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/about/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.4</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/contact/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.4</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/privacy/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.3</priority>
-</url>
-<url>
-<loc>https://serial-decoder.com/terms/</loc>
-<lastmod>2026-06-15</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.3</priority>
-</url>
+  <url>
+    <loc>https://serial-decoder.com/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/brands/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/carrier-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/bryant-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/payne-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/trane-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/american-standard-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/lennox-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/york-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/goodman-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/amana-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/daikin-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/rheem-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/ruud-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/heil-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/coleman-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/whirlpool-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/kitchenaid-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/maytag-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/amana-appliances-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/ge-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/hotpoint-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/samsung-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/lg-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/whirlpool-refrigerator-serial-number/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/whirlpool-serial-number-lookup/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/how-old-is-my-air-conditioner/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/ac-refrigerant-r22-r410a-r454b/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/rheem-ruud-serial-number-age/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/real-estate-hvac-age-inspection/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/hvac-maintenance-checklist/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/hvac-repair-vs-replace/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/how-long-does-an-hvac-system-last/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/water-heater-age-serial-number/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/refrigerator-age-serial-number/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/goodman-serial-number-age/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/lennox-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/trane-serial-number-age/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/carrier-serial-number-decoder/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/what-does-hvac-serial-number-tell-you/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/about/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/contact/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/privacy/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/terms/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
