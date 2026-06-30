@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'whirlpool-refrigerator-serial-number',
+    title: 'Whirlpool Refrigerator Serial Number Lookup: Find the Age, Model & Warranty',
+    excerpt: 'Find your Whirlpool refrigerator serial number, decode its manufacture date, look up the model number, and check warranty and recall status — for every Whirlpool fridge style.',
+    category: 'Appliances',
+    date: '2026-06-30',
+    readTime: '7 min',
+  },
+  {
     slug: 'whirlpool-serial-number-lookup',
     title: 'Whirlpool Serial Number Lookup: Find the Age, Model, and Warranty of Any Whirlpool Appliance',
     excerpt: 'How to find and read a Whirlpool serial number on a fridge, washer, dishwasher, or microwave — where the label is, what the code means, model vs. serial, and how to check your warranty.',
