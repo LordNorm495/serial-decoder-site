@@ -14,9 +14,15 @@
   </url>
   <url>
     <loc>https://serial-decoder.com/blog/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serial-decoder.com/blog/whirlpool-warranty-check/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://serial-decoder.com/carrier-serial-number-decoder/</loc>
