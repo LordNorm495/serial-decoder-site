@@ -9,6 +9,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'whirlpool-warranty-check',
+    title: 'Whirlpool Warranty Check: How to Tell If Your Appliance Is Still Covered',
+    excerpt: 'Check your Whirlpool warranty by serial number in three steps: decode the manufacture date, know the standard coverage for your appliance, and verify it on Whirlpool’s site — fridges, washers, dryers, dishwashers, and more.',
+    category: 'Appliances',
+    date: '2026-07-09',
+    readTime: '6 min',
+  },
+  {
     slug: 'whirlpool-refrigerator-serial-number',
     title: 'Whirlpool Refrigerator Serial Number Lookup: Find the Age, Model & Warranty',
     excerpt: 'Find your Whirlpool refrigerator serial number, decode its manufacture date, look up the model number, and check warranty and recall status — for every Whirlpool fridge style.',
