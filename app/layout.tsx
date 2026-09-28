@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: 'https://serial-decoder.com',
     siteName: 'Serial-Decoder.com',
     title: 'Serial Number Decoder — HVAC & Appliances',
-    description: 'Decode any HVAC or appliance serial number to find the manufacture date and age. Free, instant results.',
+    description: 'Check supported HVAC and appliance date formats, see ambiguous years and verify with manufacturer references.',
   },
   twitter: {
     card: 'summary_large_image',
@@ -37,7 +37,8 @@ export const metadata: Metadata = {
 const navLinks = [
   { href: '/', label: 'Decoder' },
   { href: '/brands', label: 'All Brands' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/blog', label: 'Guides' },
+  { href: '/methodology', label: 'Sources' },
 ]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -66,11 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Serial-Decoder.com',
               url: 'https://serial-decoder.com',
               description: 'Free serial number decoder for HVAC and appliances',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: 'https://serial-decoder.com/?q={search_term_string}',
-                'query-input': 'required name=search_term_string',
-              },
+
             }),
           }}
         />
@@ -84,12 +81,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Navigation */}
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
+            <div className="flex flex-wrap items-center justify-between gap-3 min-h-16 py-3">
               <Link href="/" className="flex items-center gap-2 font-bold text-xl text-blue-700 hover:text-blue-800">
                 <span className="text-2xl">🔍</span>
                 <span>Serial<span className="text-gray-800">Decoder</span><span className="text-blue-300">.com</span></span>
               </Link>
-              <div className="flex items-center gap-6">
+              <div className="flex flex-wrap items-center gap-4">
                 {navLinks.map(link => (
                   <Link
                     key={link.href}
@@ -122,13 +119,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="text-white font-bold text-xl mb-3">🔍 SerialDecoder.com</div>
                 <p className="text-sm leading-relaxed">
                   Free serial number decoder for HVAC systems and home appliances.
-                  Instantly find your unit&apos;s manufacture date and age to make better repair, replace, or warranty decisions.
+                  Check supported formats and document the evidence behind a manufacture-date estimate.
                 </p>
               </div>
               <div>
                 <h4 className="text-white font-semibold mb-3">Company</h4>
                 <ul className="space-y-1 text-sm">
                   <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                  <li><Link href="/equipment-record/" className="hover:text-white">Equipment Record</Link></li>
+                  <li><Link href="/methodology/" className="hover:text-white">Sources & Corrections</Link></li>
                   <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                   <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                   <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
@@ -150,7 +149,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div>
                 <h4 className="text-white font-semibold mb-3">Top Appliance Brands</h4>
                 <ul className="space-y-1 text-sm">
-                  {['whirlpool','ge','samsung','lg','maytag','kitchenaid'].map(slug => (
+                  {['whirlpool','ge','samsung','lg','bosch','kitchenaid'].map(slug => (
                     <li key={slug}>
                       <Link href={`/${slug}-serial-number-decoder`} className="hover:text-white transition-colors">
                         {slug.charAt(0).toUpperCase() + slug.slice(1)} Decoder

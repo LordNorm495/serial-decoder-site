@@ -26,9 +26,7 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
         const detected = autoDetect(serial)
         if (detected.length > 0) {
           setSuggestions(detected)
-          const topBrand = detected[0].brand
-          const res = decodeByBrand(serial, topBrand)
-          setResult(res)
+          setResult(null) // A matching pattern does not establish a brand.
         } else {
           setSuggestions([])
           setResult({
@@ -85,9 +83,9 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
               id="serial-input"
               type="text"
               value={serial}
-              onChange={e => setSerial(e.target.value.trim())}
+              onChange={e => { setSerial(e.target.value); setResult(null); setSuggestions([]) }}
               onKeyDown={handleKeyDown}
-              placeholder="e.g. 0105E12345 or X4M123456"
+              placeholder="e.g. 1306123456 (Goodman)"
               className="w-full text-lg px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors font-mono tracking-wider"
               autoComplete="off"
               autoCorrect="off"
@@ -98,15 +96,15 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
 
           <div>
             <label htmlFor="brand-select" className="block text-sm font-semibold text-gray-700 mb-2">
-              Brand <span className="font-normal text-gray-500">(optional — leave blank to auto-detect)</span>
+              Brand <span className="font-normal text-gray-500">(choose the brand on your label)</span>
             </label>
             <select
               id="brand-select"
               value={brand}
-              onChange={e => setBrand(e.target.value as BrandKey | '')}
+              onChange={e => { setBrand(e.target.value as BrandKey | ''); setResult(null); setSuggestions([]) }}
               className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors bg-white text-gray-700"
             >
-              <option value="">— Auto-detect brand —</option>
+              <option value="">— Select brand or show possible formats —</option>
               <optgroup label="HVAC Systems">
                 {hvacBrands.map(b => (
                   <option key={b.value} value={b.value}>{b.label}</option>
@@ -130,10 +128,11 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
         </div>
       </div>
 
+      <p className="text-xs text-gray-500 mt-3">Calculation runs in your browser. Serial input is not sent to a manufacturer or included in analytics events. <a href="/methodology/" className="underline text-blue-700">Supported formats and limitations</a>.</p>
       {/* Auto-detect Suggestions */}
       {suggestions.length > 0 && (
         <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-xl">
-          <p className="text-sm font-semibold text-blue-700 mb-2">Auto-detected possible brands:</p>
+          <p className="text-sm font-semibold text-blue-700 mb-2">These patterns overlap. Choose only the brand printed on your equipment:</p>
           <div className="flex flex-wrap gap-2">
             {suggestions.map(s => (
               <button
@@ -156,26 +155,27 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
 
       {/* Results */}
       {result && (
-        <div className="mt-6">
+        <div className="mt-6" aria-live="polite">
           {result.error && !result.year ? (
             <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
-              <h3 className="text-red-700 font-semibold text-lg mb-2">⚠️ Could Not Decode</h3>
+              <h3 className="text-red-700 font-semibold text-lg mb-2">Manufacturer confirmation needed</h3>
               <p className="text-red-600">{result.error}</p>
               <p className="text-sm text-gray-500 mt-3">
-                Make sure you have the full serial number (not model number) and selected the correct brand.
+                Check the full label and brand. See the brand guide for supported formats and official references; some valid serials are outside this tool’s scope.
               </p>
             </div>
           ) : (
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 md:p-8">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-gray-800">
-                  📋 Decode Results — {result.brand}
+                  Date estimate — {result.brand}
                 </h3>
                 <span className={`text-sm font-semibold ${confidenceColor[result.confidence]}`}>
-                  Confidence: {confidenceLabel[result.confidence]}
+                  {result.candidateYears && result.candidateYears.length > 1 ? "Year ambiguous" : "Format-based estimate"}
                 </span>
               </div>
 
+              {result.candidateYears && result.candidateYears.length > 1 && <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4"><p className="font-bold">Possible years: {result.candidateYears.join(', ')}</p><p className="text-sm mt-2">The serial alone does not resolve the cycle. No single age is assigned. Confirm with the model, original records or manufacturer.</p></div>}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <ResultCard label="Year" value={result.year?.toString() ?? '—'} highlight={!!result.year} />
                 <ResultCard label="Month" value={result.monthName ?? (result.month?.toString() ?? '—')} highlight={!!result.month} />
@@ -204,7 +204,7 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
 
               {result.age !== null && result.age > 15 && (
                 <div className="mt-4 bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-sm text-yellow-800">
-                  ⚠️ <strong>This unit is over 15 years old.</strong> Consider scheduling a professional inspection. HVAC systems typically last 15–20 years.
+                  <strong>Age is only one factor.</strong> Condition, repair history, safety and parts availability matter. A decoded date does not establish remaining service life.
                 </div>
               )}
 

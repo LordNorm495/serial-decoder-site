@@ -1,30 +1,3 @@
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'About Serial Decoder — HVAC & Appliance Serial Number Experts',
-  description: 'Learn about Serial Decoder, the trusted resource for decoding HVAC and appliance serial numbers.',
-};
-
-export default function AboutPage() {
-  return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">About Serial Decoder</h1>
-      <section className="prose prose-lg max-w-none text-gray-700 space-y-6">
-        <p>Serial Decoder is a free resource built by HVAC technicians and appliance repair professionals to help homeowners, landlords, contractors, and real estate agents quickly decode the manufacturing dates hidden inside appliance and HVAC serial numbers.</p>
-        <p>We started this project after years of watching homeowners struggle to answer a simple question: how old is this furnace? That information is encoded in the serial number — but every manufacturer uses a different format. We built Serial Decoder to fix that.</p>
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">What We Do</h2>
-        <p>Our tools decode serial numbers from hundreds of brands including Carrier, Trane, Lennox, Rheem, York, Goodman, Whirlpool, GE, LG, Samsung, Maytag, and many more. Enter the serial number and get the manufacture date instantly.</p>
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Who We Are</h2>
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Andrew Norman — Founder</h3>
-          <p className="text-gray-600 text-sm mb-3">HVAC Technician · 15+ Years Experience · EPA 608 Certified</p>
-          <p>Andrew has worked in residential and commercial HVAC installation and service for over 15 years. He founded Serial Decoder to give everyone access to the lookup tools that professionals use every day.</p>
-        </div>
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Our Editorial Standards</h2>
-        <p>Every brand decoder has been verified against manufacturer documentation and cross-referenced with HVAC industry databases. Our blog articles are written by certified HVAC technicians and appliance repair professionals.</p>
-        <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Get in Touch</h2>
-        <p>Questions, corrections, or brand requests? Head to our <a href="/contact" className="text-blue-600 hover:underline">Contact page</a>. We respond within 2 business days.</p>
-      </section>
-    </main>
-  );
-}
+import Link from 'next/link'
+export const metadata={title:'About Serial Decoder',description:'An independent tool for understanding HVAC and appliance manufacture-date codes, with manufacturer references and stated limitations.'}
+export default function AboutPage(){return <article className="max-w-4xl mx-auto px-4 py-12 space-y-6 text-gray-700"><h1 className="text-3xl font-bold text-gray-900">About Serial Decoder</h1><p>Serial Decoder is an independent website owned and maintained by Andrew Smith. It helps homeowners, property owners and people evaluating used equipment understand what a label can tell them about manufacture date.</p><h2 className="text-2xl font-bold">What the site provides</h2><p>The calculator checks specific documented date-code patterns. Brand guides explain their limits and link to manufacturer references. A printable equipment record helps you keep the serial, date evidence and service history together.</p><p>We are not a manufacturer, warranty administrator or equipment inspection service. Brand names identify the products discussed; they do not imply affiliation or endorsement.</p><h2 className="text-2xl font-bold">Accuracy and editorial approach</h2><p>We prioritize manufacturer manuals and support pages. Repeating year codes are presented as ambiguous, and formats without adequate documentation are not assigned a guessed date. An estimate should be checked against the full model, label and original records before it informs a purchase or warranty request.</p><p>The site previously included technician credentials and personal service-experience claims that we could not substantiate. Those claims have been removed as part of the September 2026 content review. Our evidence is the linked documentation and the stated scope of each rule.</p><h2 className="text-2xl font-bold">Funding</h2><p>The tools are free to use. We are applying to fund the website through Google AdSense advertising. Advertising does not verify a date result or create a manufacturer relationship.</p><p><Link href="/methodology/" className="text-blue-700 underline">Read our method and correction history</Link>, or <Link href="/contact/" className="text-blue-700 underline">report a problem</Link>.</p></article>}

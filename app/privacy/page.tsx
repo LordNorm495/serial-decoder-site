@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
-  const lastUpdated = 'May 27, 2026';
+  const lastUpdated = 'September 28, 2026';
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
 
         <h3 className="text-lg font-semibold text-gray-900 mt-5 mb-2">Information You Provide</h3>
         <p>
-          When you use our contact form, we collect the name, email address, and message content
+          Serial-number calculations and equipment-record entries are processed in your browser and are not included in our analytics events. The equipment record is not retained when the page is reloaded. When you use our contact form, we collect the name, email address, and message content
           you submit. We use this information solely to respond to your inquiry.
         </p>
 
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
 
         <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. Advertising</h2>
         <p>
-          We participate in the Google AdSense advertising program. Google and its partners may
+          We are applying to use the Google AdSense advertising program. Google and its partners may
           display ads on the Site based on your prior visits to this and other websites. Google&apos;s
           use of advertising cookies enables it and its partners to serve ads based on your visit
           to the Site and/or other sites on the internet.
@@ -145,9 +145,7 @@ export default function PrivacyPage() {
 
         <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. Data Retention</h2>
         <p>
-          Contact form submissions are retained for up to 12 months, after which they are deleted.
-          Analytics data is retained in accordance with Google Analytics default retention
-          settings (up to 26 months).
+          Contact messages are stored in Netlify Forms so we can respond and investigate corrections. You can request deletion using the contact form. Analytics retention depends on the settings in our Google Analytics property.
         </p>
 
         <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
@@ -158,8 +156,8 @@ export default function PrivacyPage() {
           Area (under the GDPR), you may have certain rights regarding your personal data,
           including the right to access, correct, or delete data we hold about you. To exercise
           these rights, please contact us at{' '}
-          <a href="mailto:hello@serial-decoder.com" className="text-blue-600 hover:underline">
-            hello@serial-decoder.com
+          <a href="/contact/" className="text-blue-600 hover:underline">
+            contact form
           </a>
           .
         </p>
@@ -196,9 +194,9 @@ export default function PrivacyPage() {
         </p>
         <address className="not-italic bg-gray-50 border border-gray-200 rounded-md p-4 text-gray-700">
           Serial Decoder<br />
-          Email:{' '}
-          <a href="mailto:hello@serial-decoder.com" className="text-blue-600 hover:underline">
-            hello@serial-decoder.com
+          Contact:{' '}
+          <a href="/contact/" className="text-blue-600 hover:underline">
+            contact form
           </a>
           <br />
           Website: serial-decoder.com
