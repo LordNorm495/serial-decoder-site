@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Decode your Amana appliance serial number to find manufacture year and month. Amana appliances are a Whirlpool brand. Free decoder for Amana refrigerators, washers, and more.',
 }
 
-const brand = getBrandBySlug('amana')!
+const brand = getBrandBySlug('amana-appliances')!
 
 export default function AmanaAppliancesDecoderPage() {
   return (

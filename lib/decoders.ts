@@ -209,35 +209,36 @@ function yorkDecode(serial: string, brand = 'York'): DecodeResult {
 }
 
 // ─── GOODMAN / AMANA / DAIKIN ────────────────────────────────────────────────
-// First 4 digits: YYWW or first 2 = year, next 2 = week
-// Example: 0612... = year 2006, week 12
+// Supported ten-digit numeric format: YYMM + six production digits.
+// Manufacturer warranty documents identify the first four digits as year/month.
 function goodmanDecode(serial: string, brand = 'Goodman'): DecodeResult {
   const s = serial.replace(/\s/g, '')
-  const notes: string[] = []
   let year: number | null = null
-  let week: number | null = null
-
-  if (s.length >= 4) {
-    const yy = parseInt(s.substring(0, 2), 10)
-    const ww = parseInt(s.substring(2, 4), 10)
-    if (!isNaN(yy) && !isNaN(ww)) {
-      year = yy >= 80 ? 1900 + yy : 2000 + yy
-      week = ww >= 1 && ww <= 52 ? ww : null
-      notes.push(`First 4 digits "${s.substring(0, 4)}" → Year: ${year}, Week: ${week}`)
+  let month: number | null = null
+  const notes: string[] = []
+  let error: string | undefined = 'Enter the complete 10-digit numeric serial number. Older and other formats need manufacturer confirmation.'
+  if (/^\d{10}$/.test(s)) {
+    const yy = Number(s.slice(0, 2))
+    const mm = Number(s.slice(2, 4))
+    const candidateYear = yy >= 80 ? 1900 + yy : 2000 + yy
+    const now = new Date()
+    if (mm < 1 || mm > 12) {
+      error = 'The month code must be 01–12. Check the serial number on the equipment label; this is not a week code.'
+    } else if (candidateYear > now.getFullYear() || (candidateYear === now.getFullYear() && mm > now.getMonth() + 1)) {
+      error = 'This date would be in the future. Recheck the label or ask the manufacturer to confirm this format.'
+    } else {
+      year = candidateYear
+      month = mm
+      error = undefined
+      notes.push(`First four digits "${s.slice(0, 4)}" → ${monthName(month)} ${year} (YYMM).`)
+      notes.push('This estimate assumes the supported ten-digit HVAC format. Manufacture date is not installation date or proof of warranty coverage.')
+      notes.push('Two-digit years are interpreted as 1980–1999 or 2000 onward; confirm older equipment with the manufacturer.')
     }
   }
-
   return {
-    brand,
-    year,
-    month: null,
-    week,
-    age: calcAge(year),
-    monthName: null,
-    confidence: year ? 'high' : 'low',
-    notes,
-    rawSerial: serial,
-    error: year ? undefined : 'Could not decode year from serial number',
+    brand, year, month, week: null, age: calcAge(year),
+    monthName: monthName(month), confidence: year ? 'medium' : 'low',
+    notes, rawSerial: serial, error,
   }
 }
 
@@ -682,8 +683,8 @@ export function autoDetect(serial: string): { brand: BrandKey; confidence: 'high
     results.push({ brand: 'rheem', confidence: 'medium' })
   }
 
-  // Goodman: starts with 4 digits (YYWW)
-  if (/^\d{4}/.test(s)) {
+  // Goodman: supported ten-digit YYMM format; other brands may share it.
+  if (!goodmanDecode(s).error) {
     results.push({ brand: 'goodman', confidence: 'medium' })
   }
 
