@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     template: '%s | Serial-Decoder.com',
   },
   description: 'Free serial number decoder for HVAC systems and appliances. Find the manufacture date and age of Carrier, Trane, Lennox, Rheem, Whirlpool, GE, Samsung, LG, and more.',
-  keywords: ['serial number decoder', 'HVAC age', 'appliance manufacture date', 'Carrier serial number', 'Trane serial decoder', 'Lennox age'],
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
     description: 'Check supported HVAC and appliance date formats, see ambiguous years and verify with manufacturer references.',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Serial Number Decoder',
     description: 'Find out how old your HVAC or appliance is in seconds.',
   },
@@ -139,8 +138,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ul className="space-y-1 text-sm">
                   {['carrier','trane','lennox','york','goodman','rheem'].map(slug => (
                     <li key={slug}>
-                      <Link href={`/${slug}-serial-number-decoder`} className="hover:text-white transition-colors capitalize">
-                        {slug.charAt(0).toUpperCase() + slug.slice(1)} Decoder
+                      <Link href={`/${slug}-serial-number-decoder/`} className="hover:text-white transition-colors capitalize">
+                        {({ge:'GE',lg:'LG',kitchenaid:'KitchenAid'} as Record<string,string>)[slug] ?? slug.charAt(0).toUpperCase() + slug.slice(1)} Decoder
                       </Link>
                     </li>
                   ))}
@@ -151,8 +150,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ul className="space-y-1 text-sm">
                   {['whirlpool','ge','samsung','lg','bosch','kitchenaid'].map(slug => (
                     <li key={slug}>
-                      <Link href={`/${slug}-serial-number-decoder`} className="hover:text-white transition-colors">
-                        {slug.charAt(0).toUpperCase() + slug.slice(1)} Decoder
+                      <Link href={`/${slug}-serial-number-decoder/`} className="hover:text-white transition-colors">
+                        {({ge:'GE',lg:'LG',kitchenaid:'KitchenAid'} as Record<string,string>)[slug] ?? slug.charAt(0).toUpperCase() + slug.slice(1)} Decoder
                       </Link>
                     </li>
                   ))}

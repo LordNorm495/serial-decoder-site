@@ -1,4 +1,4 @@
-import { BrandKey } from './decoders'
+import { BrandKey, automaticBrands } from './decoders'
 import { getGuide } from './guideData'
 
 export interface BrandInfo {
@@ -359,3 +359,26 @@ export const brandSelectOptions = brands.map(b => ({
   label: b.name,
   category: b.category,
 }))
+
+
+export function brandHeading(brand: BrandInfo): string {
+  return automaticBrands.includes(brand.key)
+    ? `${brand.name} Serial Number Decoder`
+    : `${brand.name} Serial Number Date Guide`
+}
+
+export function brandMetadata(brand: BrandInfo) {
+  const automated = automaticBrands.includes(brand.key)
+  const url = `/${brand.slug}-serial-number-decoder/`
+  const title = automated
+    ? `${brand.name} Serial Number Decoder: Age & Date Lookup`
+    : `${brand.name} Serial Number: Find the Manufacture Date`
+  const description = `Find the manufacture date and age from a ${brand.name} serial number. Supported date-code formats, worked examples, limits and manufacturer references.`
+  return {
+    title: { absolute: title },
+    description,
+    alternates: { canonical: url },
+    openGraph: { type: 'website' as const, locale: 'en_US', siteName: 'Serial-Decoder.com', title, description, url },
+    twitter: { card: 'summary' as const, title, description },
+  }
+}

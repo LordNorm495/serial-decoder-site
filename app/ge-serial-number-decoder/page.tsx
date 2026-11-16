@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import BrandGuide from '@/components/BrandGuide'
-import { getBrandBySlug } from '@/lib/brands'
+import { getBrandBySlug, brandMetadata } from '@/lib/brands'
 const brand = getBrandBySlug('ge')!
-export const metadata: Metadata = {title: `${brand.name} Serial Number: Date Lookup & Verification`, description: `Find and interpret a ${brand.name} equipment label. Supported date formats, worked examples, limitations and manufacturer references.`, alternates: { canonical: '/ge-serial-number-decoder/' } }
+export const metadata: Metadata = brandMetadata(brand)
 export default function Page() { return <BrandGuide brand={brand} /> }

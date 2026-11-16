@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react'
 import { decodeByBrand, autoDetect, DecodeResult, BrandKey } from '@/lib/decoders'
-import { brandSelectOptions } from '@/lib/brands'
+import { brands, brandSelectOptions } from '@/lib/brands'
 
 interface SerialDecoderProps {
   defaultBrand?: BrandKey
@@ -55,6 +55,9 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
     if (e.key === 'Enter') handleDecode()
   }
 
+  const selectedBrand = brands.find(b => b.key === brand)
+  const example = selectedBrand?.exampleSerial
+
   const hvacBrands = brandSelectOptions.filter(b => b.category === 'hvac')
   const applianceBrands = brandSelectOptions.filter(b => b.category === 'appliance')
 
@@ -85,7 +88,8 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
               value={serial}
               onChange={e => { setSerial(e.target.value); setResult(null); setSuggestions([]) }}
               onKeyDown={handleKeyDown}
-              placeholder="e.g. 1306123456 (Goodman)"
+              placeholder={example ? `e.g. ${example}` : 'Enter the full serial from your equipment label'}
+              aria-describedby="serial-help"
               className="w-full text-lg px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors font-mono tracking-wider"
               autoComplete="off"
               autoCorrect="off"
@@ -118,6 +122,12 @@ export default function SerialDecoder({ defaultBrand, showAutoDetect = true }: S
             </select>
           </div>
 
+          <div id="serial-help" className="text-sm text-gray-600">
+            {selectedBrand ? <><p>{selectedBrand.description}</p>
+              {example && <button type="button" className="mt-2 text-blue-700 underline" onClick={() => { setSerial(example); setResult(null); setSuggestions([]) }}>Try the {selectedBrand.name} example: {example}</button>}
+              <p className="mt-2"><a href={`/${selectedBrand.slug}-serial-number-decoder/`} className="text-blue-700 underline">Read the format guide and manufacturer references</a></p>
+            </> : <p>Select the brand printed on the label. Similar serial formats can belong to different manufacturers.</p>}
+          </div>
           <button
             onClick={handleDecode}
             disabled={!serial.trim() || isDecoding}
