@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import GuideCasework, { hasCasework } from './GuideCasework'
+import GuideCasework, { reviewDate } from './GuideCasework'
 import SerialDecoder from './SerialDecoder'
 import { BrandInfo, brandHeading } from '@/lib/brands'
 import { getGuide } from '@/lib/guideData'
@@ -14,7 +14,7 @@ export default function BrandGuide({brand}:{brand:BrandInfo}) {
   <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{brandHeading(brand)}</h1>
   <p className="text-xl font-semibold text-gray-700 mb-4">{guide.title}</p>
   <p className="text-gray-600 text-lg mb-4">{guide.scope}</p>
-  <p className="text-sm text-gray-500 mb-8">Format review: {hasCasework(brand.key) ? 'October 21, 2026' : 'September 28, 2026'} · Independent reference · <Link href="/methodology/" className="text-blue-700 underline">How we verify results</Link></p>
+  <p className="text-sm text-gray-500 mb-8">Format review: {reviewDate(brand.key)} · Independent reference · <Link href="/methodology/" className="text-blue-700 underline">How we verify results</Link></p>
   {automated ? <SerialDecoder defaultBrand={brand.key}/> : <section className="rounded-xl border border-amber-200 bg-amber-50 p-6"><h2 className="font-bold text-xl mb-2">Use the full model and serial together</h2><p>{guide.meaning}</p><p className="mt-3">The steps and references below explain what to collect and how to resolve the date. A confident-looking result from an unverified pattern would not be reliable.</p></section>}
   <section className="my-8 border border-gray-200 rounded-xl p-6 bg-white">
    <h2 className="text-2xl font-bold mb-3">Read the label in this order</h2>

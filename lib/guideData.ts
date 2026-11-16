@@ -276,6 +276,10 @@ export const guides:Record<string,Guide> = {
       {
         "title": "Samsung registered-product support",
         "url": "https://www.samsung.com/us/support/shop/products/"
+      },
+      {
+        "title": "Samsung range model and serial locations",
+        "url": "https://www.samsung.com/ca/support/home-appliances/finding-the-model-and-serial-numbers-of-your-samsung-range/"
       }
     ]
   },
@@ -298,6 +302,10 @@ export const guides:Record<string,Guide> = {
       {
         "title": "Electrolux registration: model, product code and serial",
         "url": "https://ew-registration.electrolux.com/Registration/?code=AEG-GB"
+      },
+      {
+        "title": "Electrolux support: how old is my appliance (European serial format)",
+        "url": "https://www.support.emea.electrolux.com/en-uk/Frequently_Asked_Questions/How_old_is_my_appliance"
       }
     ]
   },
